@@ -4,6 +4,15 @@
 Portfolio data science project (GitHub + CV) for Data Scientist job applications:
 predict wildfire risk per grid cell in a region of Greece from satellite, weather and terrain data.
 
+## Decisions so far
+- Study area: **Attica (Attiki)**: cleanest summer wildfire signal, not dominated by one year,
+  small enough for fast downloads (see notebooks/01 and PROGRESS.md for the reasoning)
+- Fire labels: NASA FIRMS VIIRS S-NPP (375 m), 2012 onwards, vegetation fires (type 0),
+  low-confidence detections dropped
+- Basemaps: `cx.providers.Esri.WorldGrayCanvas` (CARTO now requires an API key)
+- On Windows, start VS Code from the activated env (`conda activate firerisk` then `code .`),
+  otherwise the Jupyter kernel crashes on GDAL DLLs
+
 ## About the user
 Mathematician, Decisioning Consultant (Pega CDH), doing an MSc in Data Science & ML.
 Knows basic Python and SQL. Works in ~2-hour sessions.
