@@ -1,0 +1,41 @@
+# Conda environment for the Wildfire Risk Predictor project.
+# Recreate it on any machine with:
+#   conda env create -f environment.yml
+# Update it after editing this file with:
+#   conda env update -f environment.yml --prune
+name: firerisk
+channels:
+  - conda-forge            # single channel to avoid package conflicts
+dependencies:
+  - python=3.11
+
+  # --- Core data handling ---
+  - numpy
+  - pandas
+  - requests               # download data from APIs (NASA FIRMS, Open-Meteo)
+  - python-dotenv          # read API keys from a local .env file
+  - tqdm                   # progress bars for long downloads/loops
+
+  # --- Geospatial ---
+  - geopandas              # tables with geometries (points, polygons)
+  - shapely                # geometric operations
+  - pyproj                 # coordinate reference systems / projections
+  - rasterio               # read/write satellite & elevation rasters (uses GDAL)
+  - rioxarray              # rasters as labelled multi-dimensional arrays
+  - xarray
+
+  # --- Visualisation ---
+  - matplotlib
+  - seaborn
+  - folium                 # interactive web maps
+  - contextily             # basemaps under static matplotlib maps
+
+  # --- Machine learning ---
+  - scikit-learn
+  - xgboost
+
+  # --- Notebooks ---
+  - jupyterlab
+  - ipykernel
+
+  - pip
